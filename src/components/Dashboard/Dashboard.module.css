@@ -1,0 +1,63 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.dashboardContainer {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.dashboardContent {
+  animation: slideInFromRight 0.6s ease-out;
+}
+
+.navLink {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #7c3aed, #3b82f6);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.activeNavLink::after {
+  width: 100%;
+}
+
+.profileButton {
+  transition: transform 0.2s ease;
+}
+
+.profileButton:hover {
+  transform: scale(1.05);
+}
+
+.dropdownMenu {
+  animation: fadeIn 0.2s ease-out;
+} 
